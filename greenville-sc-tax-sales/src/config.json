@@ -1,0 +1,13 @@
+{
+  "dataSourceUrl": "https://gvl-tax-sales-api.herokuapp.com",
+  "app": {
+    "title": "Greenville County SC Sortable & Searchable Tax Sale List"
+  },
+  "social": {
+    "linkedin": "https://linkedin.com/in/huntaj",
+    "website": "https://austinjhunt.com",
+    "twitter": "https://twitter.com/austinsketches",
+    "email": "austin353@gmail.com",
+    "github": "https://github.com/austinjhunt"
+  }
+}
