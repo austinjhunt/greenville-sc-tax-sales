@@ -24,7 +24,9 @@ class GreenvilleTaxSalesParser:
         html_text = requests.get(self.tax_sales_url).text
         soup = BeautifulSoup(html_text, 'html.parser')
         tax_sale_list = []
-        for table_row in soup.find_all('tr'):
+        rows = soup.find_all('tr')
+        print(f'There are {len(rows)} rows')
+        for table_row in rows:
             # each table row is formatted as item #, map #, name, amount due
             try:
                 cells = table_row.find_all('td')
