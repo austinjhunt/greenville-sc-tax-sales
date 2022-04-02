@@ -18,7 +18,7 @@ class GreenvilleTaxSalesParser:
         return href
 
     def convert_dollar_amount_to_float(self, dollar_amount):
-        return float(dollar_amount.strip().replace('$', ''))
+        return float(dollar_amount.strip().replace('$', '').replace(',', ''))
 
     def get_tax_sales_list(self):
         html_text = requests.get(self.tax_sales_url).text
