@@ -13,7 +13,7 @@ CORS(app)
 def index():
     parser = GreenvilleTaxSalesParser()
     tax_sales = parser.get_tax_sales_list()
-    tax_sales = parser.sort_tax_sales_by_amount_due(tax_sales)
+    # tax_sales = parser.sort_tax_sales_by_amount_due(tax_sales)
     tax_sales = {
         'taxSales': tax_sales
     }
