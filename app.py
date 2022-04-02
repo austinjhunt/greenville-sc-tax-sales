@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from flask.helpers import send_from_directory
 import json
-from .parser import GreenvilleTaxSalesParser
+from parser import GreenvilleTaxSalesParser
 from flask_cors import CORS, cross_origin
 app = Flask(__name__, static_folder='greenville-sc-tax-sales/build',
             static_url_path='')
