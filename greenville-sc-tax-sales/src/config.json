@@ -1,5 +1,5 @@
 {
-  "dataSourceUrl": "https://gvl-tax-sales-api.herokuapp.com",
+  "dataSourceUrl": "http://www.greenvillecounty.org/appsas400/taxsale/",
   "app": {
     "title": "Greenville County SC Sortable & Searchable Tax Sale List"
   },
