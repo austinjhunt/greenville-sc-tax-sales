@@ -14,7 +14,7 @@ export default function TaxSalesTable() {
         setTaxSales(data.taxSales);
       })
       .catch((error) => console.log(error));
-  });
+  }, []);
 
   const { items, requestSort, sortConfig } = useSortableData(taxSales);
 
