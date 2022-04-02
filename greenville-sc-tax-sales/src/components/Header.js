@@ -4,9 +4,9 @@ export default function Header(props) {
       <h1 className="text-3xl bg-yellow-100 p-5 mb-4">
         {props.config.app.title}
       </h1>
-      <p class="md:space-x-1 space-y-1 md:space-y-0 mb-4">
+      <p className="md:space-x-1 space-y-1 md:space-y-0 mb-4">
         This lightweight app makes the Greenville County Tax Sale list found at{" "}
-        <a target={"_blank"} href={props.config.dataSourceUrl}>
+        <a target="_blank" rel="noreferrer" href={props.config.dataSourceUrl}>
           {props.config.dataSourceUrl}
         </a>{" "}
         searchable and sortable to help you find the sales that match your

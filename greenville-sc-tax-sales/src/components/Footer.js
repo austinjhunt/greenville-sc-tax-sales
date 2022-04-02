@@ -19,6 +19,7 @@ export default function Footer(props) {
           <a
             href={props.config.social.website}
             target="_blank"
+            rel="noreferrer"
             className="mx-3"
           >
             Portfolio
@@ -26,6 +27,7 @@ export default function Footer(props) {
           <a
             href={props.config.social.twitter}
             target="_blank"
+            rel="noreferrer"
             className="mx-3"
           >
             Twitter
@@ -33,11 +35,17 @@ export default function Footer(props) {
           <a
             href={props.config.social.linkedin}
             target="_blank"
+            rel="noreferrer"
             className="mx-3"
           >
             LinkedIn
           </a>
-          <a href={props.config.social.github} target="_blank" className="mx-3">
+          <a
+            href={props.config.social.github}
+            target="_blank"
+            rel="noreferrer"
+            className="mx-3"
+          >
             GitHub
           </a>
         </div>

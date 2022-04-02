@@ -4,7 +4,7 @@ This lightweight app makes the Greenville County Tax Sale list found at https://
 
 ## Architecture
 
-The front end of this app is built with [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/) and [DaisyUI](https://daisyui.com/) (DaisyUI is honestly just used for Social icons in the footer). The backend is a [Flask API](https://flask.palletsprojects.com/en/2.1.x/) that uses [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to parse the existing Tax Sales list for Greenville, SC and convert it into a JSON response for the React app to consume and re-present with new features.
+The front end of this app is built with [React](https://reactjs.org/) and [Tailwind CSS](https://tailwindcss.com/). The backend is a [Flask API](https://flask.palletsprojects.com/en/2.1.x/) that uses [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) to parse the existing Tax Sales list for Greenville, SC and convert it into a JSON response for the React app to consume and re-present with new features.
 
 ## Resources
 
