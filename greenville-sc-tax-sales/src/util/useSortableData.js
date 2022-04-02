@@ -6,10 +6,15 @@ const useSortableData = (items, config = null) => {
     if (sortConfig !== null) {
       // sort is now active
       sortableItems.sort((a, b) => {
-        if (a[sortConfig.key] < b[sortConfig.key])
-          return sortConfig.direction === "ascending" ? -1 : 1;
-        if (a[sortConfig.key] > b[sortConfig.key])
-          return sortConfig.direction === "ascending" ? 1 : -1;
+        let itemA = a[sortConfig.key];
+        let itemB = b[sortConfig.key];
+        if (Number(itemA) && Number(itemB)) {
+          // dont want to compare numbers as strings
+          itemA = parseFloat(itemA);
+          itemB = parseFloat(itemB);
+        }
+        if (itemA < itemB) return sortConfig.direction === "ascending" ? -1 : 1;
+        if (itemA > itemB) return sortConfig.direction === "ascending" ? 1 : -1;
         return 0;
       });
     }

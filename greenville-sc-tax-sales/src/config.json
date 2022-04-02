@@ -3,11 +3,16 @@
   "app": {
     "title": "Greenville County SC Sortable & Searchable Tax Sale List"
   },
-  "social": {
-    "linkedin": "https://linkedin.com/in/huntaj",
-    "website": "https://austinjhunt.com",
-    "twitter": "https://twitter.com/austinsketches",
+  "contact": {
     "email": "austin353@gmail.com",
-    "github": "https://github.com/austinjhunt"
+    "social": [
+      { "title": "LinkedIn", "url": "https://linkedin.com/in/huntaj" },
+      { "title": "Portfolio", "url": "https://austinjhunt.com" },
+      {
+        "title": "Twitter",
+        "url": "https://twitter.com/austinsketches"
+      },
+      { "title": "GitHub", "url": "https://github.com/austinjhunt" }
+    ]
   }
 }

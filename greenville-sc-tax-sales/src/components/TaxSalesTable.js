@@ -19,10 +19,12 @@ export default function TaxSalesTable() {
   // handle data presentation differently on mobile
   const [mobile, setMobile] = useState(false);
   function handleWindowSizeChange() {
+    console.log("handling window size change");
     if (window.innerWidth <= 768) setMobile(true);
     console.log(`mobile = ${mobile}`);
   }
   useEffect(() => {
+    handleWindowSizeChange(); // initialize mobile statevar
     window.addEventListener("resize", handleWindowSizeChange);
     return () => {
       window.removeEventListener("resize", handleWindowSizeChange);
@@ -68,49 +70,51 @@ export default function TaxSalesTable() {
               <button
                 type="button"
                 onClick={() => requestSort("itemNumber")}
-                className={`text-sm font-medium text-black  px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`sortbutton text-sm font-medium text-black w-full px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "itemNumber"
                 )}`}
               >
-                Item #
+                Item #<span className="block sortbutton-directionlabel"></span>
+                <i className="fa fa-sort"></i>
               </button>
-              <i className="fa fa-sort"></i>
             </th>
             <th>
               <button
                 type="button"
                 onClick={() => requestSort("mapNumber")}
-                className={`text-sm font-medium text-black  px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`sortbutton text-sm font-medium text-black w-full px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "mapNumber"
                 )}`}
               >
-                Map #
+                Map #<span className="block sortbutton-directionlabel"></span>
+                <i className="fa fa-sort"></i>
               </button>
-              <i className="fa fa-sort"></i>
             </th>
             <th>
               <button
                 type="button"
                 onClick={() => requestSort("name")}
-                className={`text-sm font-medium text-black  px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`sortbutton text-sm font-medium text-black w-full px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "name"
                 )}`}
               >
                 Name
+                <span className="block sortbutton-directionlabel"></span>
+                <i className="fa fa-sort"></i>
               </button>
-              <i className="fa fa-sort"></i>
             </th>
             <th>
               <button
                 type="button"
                 onClick={() => requestSort("amountDue")}
-                className={`text-sm font-medium text-black  px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`sortbutton text-sm font-medium text-black w-full px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "amountDue"
                 )}`}
               >
                 Amount Due
+                <span className="block sortbutton-directionlabel"></span>
+                <i className="fa fa-sort"></i>
               </button>
-              <i className="fa fa-sort"></i>
             </th>
           </tr>
         </thead>
@@ -141,6 +145,28 @@ export default function TaxSalesTable() {
   let MobilePresentation = () => {
     return (
       <div>
+        <div className="w-100 grid grid-cols-2">
+          <button
+            type="button"
+            onClick={() => requestSort("name")}
+            className={`sortbutton text-sm font-medium text-black bg-slate-200 rounded m-2 p-3 align-center ${getClassNamesForColumnHeader(
+              "name"
+            )}`}
+          >
+            Sort by Name
+            <span className="block sortbutton-directionlabel"></span>
+          </button>
+          <button
+            type="button"
+            onClick={() => requestSort("amountDue")}
+            className={`sortbutton  text-sm font-medium text-black bg-slate-200 rounded m-2 p-3 align-center ${getClassNamesForColumnHeader(
+              "amountDue"
+            )}`}
+          >
+            Sort by Amount Due
+            <span className="block sortbutton-directionlabel"></span>
+          </button>
+        </div>
         {items.map((taxSale) => (
           <span
             key={taxSale.itemNumber}

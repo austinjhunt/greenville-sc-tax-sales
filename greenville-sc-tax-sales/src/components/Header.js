@@ -13,7 +13,15 @@ export default function Header(props) {
         preferences. It's the same data, scraped from that webpage, but
         presented with more options. The original list unfortunately does not
         offer the ability to sort by the amount due, for example; with this app,
-        you can quickly find the sales that are cheapest.
+        you can quickly find the sales that are cheapest. If you would like to
+        provide feedback about this app, please{" "}
+        <a
+          className="m-0 font-bold"
+          href={`mailto:${props.config.contact.email}`}
+        >
+          email me at {props.config.contact.email}
+        </a>
+        !
       </p>
     </div>
   );
