@@ -1,8 +1,14 @@
+from flask_cors import CORS, cross_origin
 from flask import Flask, jsonify
 from flask.helpers import send_from_directory
 import json
-from parser import GreenvilleTaxSalesParser
-from flask_cors import CORS, cross_origin
+import os
+from dotenv import load_dotenv
+load_dotenv()
+if os.environ.get('FLASK_ENV') == 'production':
+    from parser import GreenvilleTaxSalesParser
+else:
+    from .parser import GreenvilleTaxSalesParser
 app = Flask(__name__, static_folder='greenville-sc-tax-sales/build',
             static_url_path='')
 CORS(app)

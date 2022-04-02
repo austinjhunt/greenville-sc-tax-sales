@@ -46,7 +46,7 @@ export default function TaxSalesTable() {
             <input
               type="search"
               id="item-search-input"
-              className="form-control relative flex-auto min-w-0 block  px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+              className="form-control relative flex-auto min-w-0 block  px-3 py-4 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Search"
               aria-label="Search"
               aria-describedby="button-addon3"
@@ -70,7 +70,7 @@ export default function TaxSalesTable() {
               <button
                 type="button"
                 onClick={() => requestSort("itemNumber")}
-                className={`text-sm font-medium text-gray-900 px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`text-sm font-medium text-black dark:text-white px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "itemNumber"
                 )}`}
               >
@@ -82,7 +82,7 @@ export default function TaxSalesTable() {
               <button
                 type="button"
                 onClick={() => requestSort("mapNumber")}
-                className={`text-sm font-medium text-gray-900 px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`text-sm font-medium text-black dark:text-white px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "mapNumber"
                 )}`}
               >
@@ -94,7 +94,7 @@ export default function TaxSalesTable() {
               <button
                 type="button"
                 onClick={() => requestSort("name")}
-                className={`text-sm font-medium text-gray-900 px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`text-sm font-medium text-black dark:text-white px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "name"
                 )}`}
               >
@@ -106,7 +106,7 @@ export default function TaxSalesTable() {
               <button
                 type="button"
                 onClick={() => requestSort("amountDue")}
-                className={`text-sm font-medium text-gray-900 px-6 py-4 align-center ${getClassNamesForColumnHeader(
+                className={`text-sm font-medium text-black dark:text-white px-6 py-4 align-center ${getClassNamesForColumnHeader(
                   "amountDue"
                 )}`}
               >
@@ -122,14 +122,18 @@ export default function TaxSalesTable() {
               key={taxSale.itemNumber}
               className="taxSale-item odd:bg-white even:bg-slate-100  border-b transition duration-300 ease-in-out hover:bg-blue-100"
             >
-              <td>{taxSale.itemNumber}</td>
-              <td>
+              <td className="text-black dark:text-white">
+                {taxSale.itemNumber}
+              </td>
+              <td className="text-black dark:text-white">
                 <a href={taxSale.mapNumberLink} target="_blank">
                   {taxSale.mapNumber}
                 </a>
               </td>
-              <td>{taxSale.name}</td>
-              <td>{taxSale.amountDue}</td>
+              <td className="text-black dark:text-white">{taxSale.name}</td>
+              <td className="text-black dark:text-white">
+                {taxSale.amountDue}
+              </td>
             </tr>
           ))}
         </tbody>
